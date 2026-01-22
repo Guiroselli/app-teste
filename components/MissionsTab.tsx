@@ -11,10 +11,12 @@ interface MissionsTabProps {
 }
 
 const INITIAL_MISSIONS: Mission[] = [
-  { id: 'm1', title: 'Hidratação Nível 1', description: 'Beber 2 litros de água hoje.', xpReward: 150, completed: false, category: 'Habito' } as any,
+  // Fixed category typo from 'Habito' to 'Hábito' to match types.ts
+  { id: 'm1', title: 'Hidratação Nível 1', description: 'Beber 2 litros de água hoje.', xpReward: 150, completed: false, category: 'Hábito' } as any,
   { id: 'm2', title: 'Foco Absoluto', description: 'Realizar 20 minutos de meditação ou silêncio.', xpReward: 200, completed: false, category: 'Mental' } as any,
   { id: 'm3', title: 'Combustível Limpo', description: 'Seguir 100% o protocolo nutricional gerado.', xpReward: 300, completed: false, category: 'Nutrição' } as any,
-  { id: 'm4', title: 'Exposição Solar', description: '10 minutos de luz solar direta pela manhã.', xpReward: 100, completed: false, category: 'Habito' } as any,
+  // Fixed category typo from 'Habito' to 'Hábito' to match types.ts
+  { id: 'm4', title: 'Exposição Solar', description: '10 minutos de luz solar direta pela manhã.', xpReward: 100, completed: false, category: 'Hábito' } as any,
   { id: 'm5', title: 'Desafio Físico', description: 'Completar qualquer missão de treino do Nexus.', xpReward: 500, completed: false, category: 'Físico' } as any,
 ];
 
@@ -101,7 +103,8 @@ export const MissionsTab: React.FC<MissionsTabProps> = ({ xp, level, addXp, plan
                       {m.category === 'Físico' && <Zap className={m.completed ? 'text-green-400' : 'text-cyan-400'} />}
                       {m.category === 'Mental' && <Brain className={m.completed ? 'text-green-400' : 'text-purple-400'} />}
                       {m.category === 'Nutrição' && <Apple className={m.completed ? 'text-green-400' : 'text-red-400'} />}
-                      {m.category === 'Habito' && <Sun className={m.completed ? 'text-green-400' : 'text-yellow-400'} />}
+                      {/* Fixed category typo from 'Habito' to 'Hábito' to match types.ts */}
+                      {m.category === 'Hábito' && <Sun className={m.completed ? 'text-green-400' : 'text-yellow-400'} />}
                     </div>
                     <div>
                       <h4 className={`font-orbitron font-bold text-lg uppercase ${m.completed ? 'text-green-400 line-through' : 'text-white'}`}>

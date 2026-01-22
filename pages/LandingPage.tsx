@@ -5,10 +5,16 @@ import { FeatureGrid } from '../components/FeatureGrid';
 import { AICoachPreview } from '../components/AICoachPreview';
 import { WaitlistForm } from '../components/WaitlistForm';
 
-const LandingPage: React.FC = () => {
+interface LandingPageProps {
+  onNavigate: (tab: string) => void;
+  plan: string;
+}
+
+const LandingPage: React.FC<LandingPageProps> = ({ onNavigate, plan }) => {
   return (
     <div className="animate-in fade-in duration-1000">
-      <Hero />
+      {/* Added missing props to Hero component */}
+      <Hero onNavigate={onNavigate} plan={plan} />
       <FeatureGrid />
       
       {/* Narrative Section */}

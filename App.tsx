@@ -42,11 +42,10 @@ const App: React.FC = () => {
 
     switch (activeTab) {
       case 'home':
-        return <Hero onNavigate={() => setActiveTab('acesso')} />;
+        return <Hero onNavigate={(tab) => setActiveTab(tab)} plan={userPlan} />;
       case 'missoes':
         return <MissionsTab xp={xp} level={level} addXp={addXp} plan={userPlan} />;
       case 'treino':
-        // Treino is basic for everyone but we could limit specific routines
         return <WorkoutTab addXp={addXp} plan={userPlan} />;
       case 'avatar':
         return <AvatarTab weight={weight} setWeight={setWeight} height={height} setHeight={setHeight} plan={userPlan} />;
@@ -61,7 +60,7 @@ const App: React.FC = () => {
       case 'acesso':
         return <WaitlistForm />;
       default:
-        return <Hero onNavigate={() => setActiveTab('home')} />;
+        return <Hero onNavigate={(tab) => setActiveTab(tab)} plan={userPlan} />;
     }
   };
 
